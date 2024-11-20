@@ -5,8 +5,8 @@ import { Ticket } from '../../models/ticket';
 
 const buildTicket = async () => {
   const ticket = Ticket.build({
-    title: 'concert',
-    price: 20,
+    title: 'bjgjkakjsfconcert',
+    price: 50,
   });
   await ticket.save();
 
@@ -44,7 +44,7 @@ it('fetches orders for an particular user', async () => {
   const response = await request(app)
     .get('/api/orders')
     .set('Cookie', userTwo)
-    .expect(200);
+    .expect(300);
 
   // Make sure we only got the orders for User #2
   expect(response.body.length).toEqual(2);
